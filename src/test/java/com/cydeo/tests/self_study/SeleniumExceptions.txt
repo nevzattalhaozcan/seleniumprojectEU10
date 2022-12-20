@@ -18,7 +18,7 @@ SELENIUM EXCEPTIONS
 		WebDriverManager.firefoxdriver().setup();
 		WebDriverManager.edgedriver().setup();
 
-	*** But, with the new versions, there is no need to setup this drivers before use
+	*** But, with the new versions, there is no need to set up these drivers before use
 
 2.	NoSuchElementException:
 
