@@ -1,0 +1,29 @@
+SELENIUM EXCEPTIONS
+
+1.	IllegalStateException:
+
+	Selenium requires some setup steps before we can use it, like setting the path to the WebDriver. If we don't configure the path to the WebDriver, we can't run it to control the browser, and we'll get a java.lang.IllegalStateException.
+
+	Manual Setup: First, we need to download the correct WebDriver for our browser. It's essential to download the right version according to our browser because, otherwise, there can be unforeseen issues when running it. Selenium then needs the path to the downloaded driver so that it can run it to control the browser. We can set the path to the driver with a system property. The key of the property is different for each browser:
+
+		Chrome: webdriver.chrome.driver
+		Firefox: webdriver.gecko.driver
+		Edge: webdriver.edge.driver
+
+		Example:System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+
+	Automated Setup: To overcome this, we can make use of the WebDriverManager library, which handles these tasks for us every time we run it. First, we need to add the dependency to our pom.xml. The setup using the library is straightforward and requires just one line of code.
+
+		WebDriverManager.chromedriver().setup();
+		WebDriverManager.firefoxdriver().setup();
+		WebDriverManager.edgedriver().setup();
+
+	*** But, with the new versions, there is no need to setup this drivers before use
+
+2.	NoSuchElementException:
+
+
+
+3.	ElementNotInteractableException:
+
+
